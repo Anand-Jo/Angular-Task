@@ -1,0 +1,23 @@
+<div fxLayoutAlign="center center">
+    <div  fxLayout="row warp" *ngIf="!isLoading">
+        <mat-card *ngFor="let card of cardList;let i = index" class="mat-elevation-z8" style="height: 300px;margin:10px">
+            <mat-card-title fxLayout="row" fxLayoutAlign="space-between">
+                {{card.API}}
+                <button mat-button (click)="deleteCard(card.API)">
+                    <mat-icon>delete</mat-icon>
+                </button>
+            </mat-card-title>
+            <mat-card-content fxLayout="column" fxLayoutGap="10px">
+                <span>API:{{card.API}}</span>
+                <span>DESCRIPTION:{{card.Description}}</span>
+                <span>AUTH:{{card.Auth}}</span>
+                <span>HTTPS:{{card.HTTPS}}</span>
+                <span>CORS:{{card.Cors}}</span>
+                <span>LINK:{{card.Link}}</span>
+                <span>CATEGORY:{{card.Category}}</span>
+            </mat-card-content>
+        </mat-card>
+    </div>
+    <mat-spinner *ngIf="isLoading" style="position:relative;top:300px"></mat-spinner>
+
+

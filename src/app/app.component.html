@@ -1,0 +1,20 @@
+<div [ngClass]="{'darkMode':mode=='dark'}">
+  <mat-toolbar fxLayout="row" fxLayoutAlign="space-between center" color="primary">
+    <div fxLayout="row" fxLayoutGap="40px">
+      <a routerLink="/table">Table</a>
+      <a routerLink="/cards">Cards</a>
+      <a routerLink="/settings">Settings</a>
+    </div>
+    <mat-form-field fxFlex="40">
+      <input type="text" matInput [matAutocomplete]="auto">
+      <mat-icon style="position:relative;top:10px;right:15%">search</mat-icon>
+      <mat-autocomplete #auto="matAutocomplete">
+        <mat-option *ngFor="let option of cardList" [value]="option.API" (click)="changeOption(option.API)">
+          {{option.API}}
+        </mat-option>
+      </mat-autocomplete>
+    </mat-form-field>
+  
+  </mat-toolbar>
+  <router-outlet></router-outlet>
+</div>

@@ -1,0 +1,9 @@
+.table_container{
+    height: 90%;
+    width:75%;
+    overflow: scroll;
+}
+th {
+    text-align: center !important;
+    vertical-align: middle !important;
+    }
